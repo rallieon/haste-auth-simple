@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="<%= htmlWebpackPlugin.options.metaDesc %>"
+    />
+    <script type="text/javascript">
+      window.onload = function () {
+        EntryPoint.run();
+      };
+    </script>
+
+    <style>
+      .showPanel {
+        display: block;
+      }
+
+      .hidePanel {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= htmlWebpackPlugin.options.header %></h1>
+
+    <div id="wrapper" style="height: 120px">
+      <div class="hidePanel" id="panelAuthTrue">Authenticated: Yes</div>
+      <div class="hidePanel" id="panelAuthFalse">Authenticated: No</div>
+    </div>
+    <div id="wrapper" style="height: 120px">
+      <div class="hidePanel" id="logout">
+        <button type="button" onclick="EntryPoint.logout()">Logout</button>
+      </div>
+      <div class="hidePanel" id="login">
+        <button type="button" onclick="EntryPoint.login()">Login</button>
+      </div>
+    </div>
+    <div id="zoom-scene"></div>
+  </body>
+</html>
